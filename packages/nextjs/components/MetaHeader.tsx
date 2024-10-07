@@ -14,8 +14,8 @@ type MetaHeaderProps = {
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/` : "/";
 
 export const MetaHeader = ({
-  title = "Stake4Fun | DAPP",
-  description = "Decentralized Staking App",
+  title = "ScoreLend",
+  description = "Decentralized Undercolleratized Lending",
   image = "thumbnail.png",
   twitterCard = "summary_large_image",
   children,
