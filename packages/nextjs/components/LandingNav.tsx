@@ -16,8 +16,8 @@ const LandingNav: React.FC = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex items-center space-x-4">
-                    <SwitchTheme className="pointer-events-auto" />
-                    <a className="btn bg-white text-blue-600 hover:bg-gray-200 transition duration-300" href="/earn" target="_blank">Launch App</a>
+                    <a className="btn bg-white text-blue-600 hover:bg-gray-200 transition duration-300" href="/borow" target="_blank">Borrow</a>
+                    <a href="#learn-more" className="bg-transparent border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition duration-300" href="/earn" target="_blank">Launch App</a>
                 </div>
             </div>
         </nav>

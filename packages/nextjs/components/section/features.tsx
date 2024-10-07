@@ -38,7 +38,7 @@ const Features: React.FC = () => {
                 <h2 className="text-4xl font-bold mb-12">Key Features</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-white text-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        <div key={index} className="bg-white text-gray-800 p-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
                             <div className="text-5xl mb-4">{feature.icon}</div>
                             <h3 className="text-2xl font-semibold mb-2">{feature.title}</h3>
                             <p className="text-gray-600">{feature.description}</p>

@@ -1,0 +1,6 @@
+import { useRouter } from "next/router"
+
+export const TagName = () => {
+    const { tag } = useRouter().query;
+    return tag || null;
+}

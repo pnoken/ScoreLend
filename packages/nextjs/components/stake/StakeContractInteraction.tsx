@@ -117,7 +117,7 @@ export const StakeContractInteraction = ({ address }: { address?: string }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center bg-white shadow-lg border rounded-xl p-6 w-full md:w-2/3">
+      {/* <div className="flex flex-col items-center bg-white shadow-lg border rounded-xl p-6 w-full md:w-2/3">
         <div className="form-control w-full">
           <div className="tabs">
             <a className={`tab tab-lifted ${activeTab === 'stake' ? 'tab-active' : ''}`} onClick={() => handleTabClick('stake')}>Stake</a>
@@ -196,9 +196,9 @@ export const StakeContractInteraction = ({ address }: { address?: string }) => {
             Withdraw
           </button>
         )}
-      </div>
+      </div> */}
 
-      <div className="flex flex-col w-full lg:flex-row">
+      {/* <div className="flex flex-col w-full lg:flex-row">
         <div className="grid flex-grow card bg-white m-4 rounded-lg p-4 shadow-md">
           <h2>Stakings</h2>
           <div className="divider"></div>
@@ -217,7 +217,7 @@ export const StakeContractInteraction = ({ address }: { address?: string }) => {
           <h3>Pending Rewards: {rewards ? formatEther(rewards) : 0}</h3>
           <div className="divider"></div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

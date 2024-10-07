@@ -10,6 +10,55 @@ const StakerUI: NextPage = () => {
   const { data: StakerContract } = useDeployedContractInfo("Staker");
   const { address, isConnected } = useAccount();
 
+  const openDeals = [
+    {
+      title: "African Innovative Pool",
+      shortDescription: "Automated Diversified Portfolio",
+      description: "Capital from this pool will be used to fund leading fintech companies in Africa - the epicenter of the world's population growth. Proceeds will be used for a wide array of use cases including SMB lending, asset financing, payday/invoice advances, supply chain financing, remittances, and more.",
+      icon: "/assets/afric.jpg",
+      usdcInterest: "8.50%",
+      gfiAPY: "1.25%",
+      loanTerm: "Open-ended",
+      liquidity: "1 week withdraw requests",
+    },
+    // {
+    //   title: "African Fintech Exposure",
+    //   description: "Invest in a diversified portfolio of fintech startups across Africa, focusing on innovative solutions that drive financial inclusion and economic growth.",
+    //   icon: "/path/to/african-fintech-exposure-icon.png",
+    //   usdcInterest: "7.75%",
+    //   gfiAPY: "0.80%",
+    //   loanTerm: "6 months",
+    //   liquidity: "2 week withdraw requests",
+    // },
+    // {
+    //   title: "Tech for Good Fund",
+    //   description: "This fund supports tech startups that are solving social issues in Africa, from healthcare to education, ensuring sustainable development and impact.",
+    //   icon: "/path/to/tech-for-good-fund-icon.png",
+    //   usdcInterest: "9.00%",
+    //   gfiAPY: "1.50%",
+    //   loanTerm: "Open-ended",
+    //   liquidity: "1 month withdraw requests",
+    // },
+    // {
+    //   title: "Green Energy Initiative",
+    //   description: "Funding for startups focused on renewable energy solutions in Africa, promoting sustainability and reducing carbon footprints.",
+    //   icon: "/path/to/green-energy-initiative-icon.png",
+    //   usdcInterest: "8.25%",
+    //   gfiAPY: "1.10%",
+    //   loanTerm: "12 months",
+    //   liquidity: "3 week withdraw requests",
+    // },
+    // {
+    //   title: "Agritech Growth Fund",
+    //   description: "Invest in agritech startups that are revolutionizing agriculture in Africa through technology, improving food security and farmer livelihoods.",
+    //   icon: "/path/to/agritech-growth-fund-icon.png",
+    //   usdcInterest: "7.50%",
+    //   gfiAPY: "0.90%",
+    //   loanTerm: "Open-ended",
+    //   liquidity: "2 week withdraw requests",
+    // },
+  ];
+
   return (
     <>
       <Header />
@@ -20,7 +69,6 @@ const StakerUI: NextPage = () => {
           <h3 className="text-lg font-semibold mb-4">Base</h3>
           <nav className="flex flex-col gap-2">
             <a className="bg-gray-200 rounded-lg p-3 hover:bg-gray-300 transition duration-200" href="#staking">Staking</a>
-            <a className="bg-gray-200 rounded-lg p-3 hover:bg-gray-300 transition duration-200" href="#swap">Swap</a>
             <a className="bg-gray-200 rounded-lg p-3 hover:bg-gray-300 transition duration-200" href="#borrow">Borrow</a>
             <a className="bg-gray-200 rounded-lg p-3 hover:bg-gray-300 transition duration-200" href="#gas-request">Gas Request</a>
           </nav>
@@ -29,39 +77,68 @@ const StakerUI: NextPage = () => {
         {/* Main Content */}
         <main className="md:w-3/4 w-full bg-gray-100 p-4">
           <div className="flex flex-col w-full border-opacity-50">
-            {isConnected && (<div className="grid card bg-white rounded-lg p-4 mt-4 shadow-md">
+            {isConnected && (
+              <div className="grid card bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-4 mt-4 shadow-md">
 
-              <div className="flex justify-between">
-                <div className="w-5/6">
-                  <h3 className="font-semibold">Set up your UID to start</h3>
-                  <p>Unique Identity (UID) is a non-transferrable NFT representing KYC-verification on-chain. A UID is required to participate in the ScoreLend lending protocol. No personal information is stored on-chain.</p>
+                <div className="flex justify-between">
+                  <div className="w-5/6">
+                    <h3 className="font-semibold text-white">Set up your UID to start</h3>
+                    <p className="text-white">Unique Identity (UID) is a non-transferrable NFT representing KYC-verification on-chain. A UID is required to participate in the ScoreLend lending protocol. No personal information is stored on-chain.</p>
+                  </div>
+
+                  <Link href="/account">
+                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                      Go to My Account
+                    </button>
+                  </Link>
                 </div>
-
-                <Link href="/account">
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Go to My Account
-                  </button>
-                </Link>
               </div>
-            </div>)}
+            )}
 
-            <div className="grid card bg-white rounded-lg p-4 mt-4 shadow-md">
+            <div className="grid card bg-blue-200 rounded-xl p-4 mt-4 shadow-md">
               <div className="flex flex-row justify-between">
                 <div className="flex flex-col items-center">
                   <h4 className="text-lg font-semibold">Active Loans</h4>
-                  <span className="text-2xl font-bold">$64.62M</span>
+                  <span className="text-2xl font-bold">$0.00</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <h4 className="text-lg font-semibold">Total Loss Rate</h4>
-                  <span className="text-2xl font-bold">11.03%</span>
+                  <span className="text-2xl font-bold">0.00%</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <h4 className="text-lg font-semibold">Total Loans Repaid</h4>
-                  <span className="text-2xl font-bold">$57.71M</span>
+                  <span className="text-2xl font-bold">$0.00</span>
                 </div>
               </div>
 
             </div>
+          </div>
+
+          <div className="open-deals-section my-12">
+            <h2 className="text-xl font-bold mb-4">Open Deals</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {openDeals.map((deal, index) => (
+                <div key={index} className="deal-card bg-gray-200 shadow-md rounded-xl p-6 flex flex-col justify-between">
+                  <div className="flex items-center mb-4 rounded-xl">
+                    <div className="mb-4 rounded-full">
+                      <img src={deal.icon} alt={deal.title} className="w-16 mr-4 rounded-full" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold">{deal.title}</h3>
+                      <p className="text-gray-600 text-sm">{deal.shortDescription}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <p className="text-gray-700">Variable USDC interest:</p>
+                    <p className="font-bold text-3xl">{deal.usdcInterest}</p>
+                    <p className="text-gray-700">Variable SLD APY: <span className="font-bold">{deal.gfiAPY}</span></p>
+                    <p className="text-gray-700">Loan term: <span className="font-bold">{deal.loanTerm}</span></p>
+                    <p className="text-gray-700">Liquidity: <span className="font-bold">{deal.liquidity}</span></p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-600 mt-6">0 Closed Deals</p>
           </div>
           <StakeContractInteraction key={StakerContract?.address} address={StakerContract?.address} />
           {/* <Stakings /> */}
